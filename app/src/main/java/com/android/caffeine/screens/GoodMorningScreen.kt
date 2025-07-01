@@ -1,15 +1,12 @@
 package com.android.caffeine.screens
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,7 +23,7 @@ import com.android.caffeine.ui.theme.urbanist
 
 @Preview(showSystemUi = true)
 @Composable
-fun GoodMorningScreen(){
+fun GoodMorningScreen() {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -44,7 +41,7 @@ fun GoodMorningScreen(){
                 fontWeight = FontWeight.Bold,
                 color = Gray,
                 letterSpacing = 0.25.sp,
-                lineHeight =16.sp
+                lineHeight = 16.sp
 
             )
             Text(
@@ -54,7 +51,7 @@ fun GoodMorningScreen(){
                 fontWeight = FontWeight.Bold,
                 color = DarkGray,
                 letterSpacing = 0.25.sp,
-                lineHeight =16.sp
+                lineHeight = 16.sp
 
 
             )
@@ -65,7 +62,7 @@ fun GoodMorningScreen(){
                 fontWeight = FontWeight.Bold,
                 color = Black80,
                 letterSpacing = 0.25.sp,
-                lineHeight =16.sp
+                lineHeight = 16.sp
 
 
             )

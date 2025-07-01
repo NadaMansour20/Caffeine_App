@@ -30,7 +30,7 @@ fun Header() {
         modifier = Modifier
             .fillMaxWidth()
             .statusBarsPadding()
-            .padding(top = 16.dp, start = 16.dp, end = 16.dp,bottom = 24.dp),
+            .padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 24.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Image(
@@ -47,7 +47,7 @@ fun Header() {
             tint = Black87,
             modifier = Modifier
                 .size(48.dp)
-                .background(LightWhite,RoundedCornerShape(100.dp))
+                .background(LightWhite, RoundedCornerShape(100.dp))
                 .padding(12.dp)
 
         )
