@@ -17,7 +17,5 @@ val urbanist = FontFamily(
 
 val sniglet= FontFamily(
     Font(R.font.sniglet_regular, weight = FontWeight.Normal),
-    Font(R.font.sniglet_extrabold, weight = FontWeight.ExtraBold),
-
-
-    )
+    Font(R.font.sniglet_extrabold, weight = FontWeight.ExtraBold)
+)

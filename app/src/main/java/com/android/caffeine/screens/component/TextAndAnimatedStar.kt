@@ -29,7 +29,7 @@ import com.android.caffeine.ui.theme.sniglet
 
 @Preview(showBackground = true)
 @Composable
-fun TextAndAnimatedStar() {
+fun TextAndAnimatedStar(modifier: Modifier=Modifier) {
 
     val starState = rememberInfiniteTransition()
 

@@ -12,7 +12,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.android.caffeine.R
+import com.android.caffeine.screens.component.CaffeePager
 import com.android.caffeine.screens.component.CoffeeButton
 import com.android.caffeine.screens.component.Header
 import com.android.caffeine.ui.theme.Black80
@@ -21,9 +23,9 @@ import com.android.caffeine.ui.theme.Gray
 import com.android.caffeine.ui.theme.urbanist
 
 
-@Preview(showSystemUi = true)
+//@Preview(showSystemUi = true)
 @Composable
-fun GoodMorningScreen() {
+fun WelcomeScreen(navController: NavHostController) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -31,7 +33,7 @@ fun GoodMorningScreen() {
 
         Header()
         Column(
-            modifier = Modifier.padding(top = 16.dp, start = 16.dp),
+            modifier = Modifier.weight(1f).padding(top = 16.dp, start = 16.dp),
             horizontalAlignment = Alignment.Start,
         ) {
             Text(
@@ -45,7 +47,7 @@ fun GoodMorningScreen() {
 
             )
             Text(
-                text = stringResource(R.string.nada),
+                text = stringResource(R.string.hamsa),
                 fontSize = 36.sp,
                 fontFamily = urbanist,
                 fontWeight = FontWeight.Bold,
@@ -67,11 +69,14 @@ fun GoodMorningScreen() {
 
             )
         }
+        CaffeePager(modifier = Modifier.weight(1f).align(Alignment.CenterHorizontally))
         CoffeeButton(
             modifier = Modifier.align(Alignment.CenterHorizontally),
             buttonTextId = R.string.Continue,
-            iconId = R.drawable.arrow_right
-        )
+            iconId = R.drawable.arrow_right,
+        ){
+            navController.navigate("")
+        }
     }
 }
 
