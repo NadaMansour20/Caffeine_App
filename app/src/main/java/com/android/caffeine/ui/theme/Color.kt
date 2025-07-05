@@ -19,4 +19,7 @@ val Black14=Color(0x241F1F1F)
 val Gray=Color(0xFFB3B3B3)
 val DarkGray=Color(0xFF3B3B3B)
 val Black80=Color(0xCC1F1F1F)
-
+val White=Color(0xFFF5F5F5)
+val  Black60=Color(0x991F1F1F)
+val LightBrown=Color(0xFF7C351B)
+val Brown50=Color(0x80BA4C23)

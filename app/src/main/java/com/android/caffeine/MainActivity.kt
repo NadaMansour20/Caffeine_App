@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.rememberNavController
 import com.android.caffeine.navigation.CaffeinneNavGraph
+import com.android.caffeine.screens.component.CoffeeSize
 import com.android.caffeine.ui.theme.CaffeineTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,8 +17,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             CaffeineTheme {
-                CaffeinneNavGraph(navController)
+//                CaffeinneNavGraph(navController)
+                CoffeeSize()
             }
         }
     }
 }
+

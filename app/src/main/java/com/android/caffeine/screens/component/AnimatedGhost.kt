@@ -30,7 +30,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.lerp
+import androidx.compose.ui.util.lerp
 import com.android.caffeine.R
+import com.android.caffeine.ui.theme.Black
 import com.android.caffeine.ui.theme.Black14
 
 
@@ -40,7 +43,7 @@ fun AnimatedGhost(modifier: Modifier = Modifier) {
     val ghostState = rememberInfiniteTransition()
     val shadowState = rememberInfiniteTransition()
 
-    val offsetY by ghostState.animateFloat(
+    val ghostOffsetY by ghostState.animateFloat(
         initialValue = 0f,
         targetValue = -30f,
         animationSpec = infiniteRepeatable(
@@ -49,7 +52,7 @@ fun AnimatedGhost(modifier: Modifier = Modifier) {
         ),
     )
 
-    val scale by shadowState.animateFloat(
+    val shadowOffsetY by shadowState.animateFloat(
         initialValue = 0f,
         targetValue = 10f,
         animationSpec = infiniteRepeatable(
@@ -57,6 +60,8 @@ fun AnimatedGhost(modifier: Modifier = Modifier) {
             repeatMode = RepeatMode.Reverse
         ),
     )
+    val shadowAlpha = lerp(0.3f, 0.2f, (shadowOffsetY / 10f))
+
 
     Column (
         modifier = modifier,
@@ -69,7 +74,7 @@ fun AnimatedGhost(modifier: Modifier = Modifier) {
             contentDescription = "Coffee_ghost",
             contentScale = ContentScale.Crop,
             modifier = modifier.weight(1f)
-                .offset(y = offsetY.dp)
+                .offset(y = ghostOffsetY.dp)
 
         )
 
@@ -79,14 +84,14 @@ fun AnimatedGhost(modifier: Modifier = Modifier) {
                 .padding(start = 98.67.dp, end = 84.dp)
                 . height(27.65.dp)
                 .width(177.3.dp)
-                .offset(y = scale.dp)
+                .offset(y = shadowOffsetY.dp)
                 .blur(
                     radius = 12.dp,
                     edgeTreatment = BlurredEdgeTreatment.Unbounded
                 )
                 .drawBehind {
                     drawOval(
-                        color = Black14,
+                        color = Black.copy(alpha =shadowAlpha),
                         topLeft = Offset.Zero,
                         size = Size(size.width, size.height),
                     )
